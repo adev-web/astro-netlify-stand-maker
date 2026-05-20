@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WHATSAPP_NUMBER } from "../constants";
 import Hero from "../components/Hero.astro";
+
+const telephoneNumber = `+${WHATSAPP_NUMBER.slice(0,3)}-${WHATSAPP_NUMBER.slice(3,7)}-${WHATSAPP_NUMBER.slice(7)}`;
 import Services from "../components/Services.astro";
 import Materials from "../components/Materials.astro";
 import FAQ from "../components/FAQ.astro";
@@ -35,7 +38,7 @@ import Projects from "../components/Projects.astro";
       "alternateName": "ExpoStands",
       "description": "Fabricación de stands feriales, exhibidores comerciales, corte láser en acrílico, letras corpóreas, señalización comercial y mobiliario personalizado en Panamá.",
       "url": "https://expostandspanama.com",
-      "telephone": "+507-6789-0123",
+      "telephone": "${telephoneNumber}",
       "email": "info@expostandspanama.com",
       "image": "https://expostandspanama.com/images/og-default.jpg",
       "priceRange": "$$",
