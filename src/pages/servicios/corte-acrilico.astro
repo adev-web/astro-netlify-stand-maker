@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import WhatsAppButton from "../../components/WhatsAppButton.astro";
+import { whatsappUrl } from "../../constants";
 ---
 
 <BaseLayout
@@ -61,7 +62,7 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
         <section class="cta-section" aria-labelledby="cta">
           <h2 id="cta">¿Necesitas piezas en acrílico cortadas con precisión?</h2>
           <p>Envíanos tu diseño o dime tu idea y te cotizamos en el día.</p>
-          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20corte%20láser%20en%20acrílico" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <a href={whatsappUrl("Hola, quiero cotizar corte láser en acrílico")} target="_blank" rel="noopener" class="btn btn-whatsapp">
             Cotizar por WhatsApp
           </a>
         </section>

@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import WhatsAppButton from "../../components/WhatsAppButton.astro";
+import { whatsappUrl } from "../../constants";
 ---
 
 <BaseLayout
@@ -79,7 +80,7 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
           <p>En <strong>ExpoStands Panamá</strong> te asesoramos sin compromiso. Envíanos las dimensiones del espacio, el tipo de feria y tu presupuesto, y te devolvemos una propuesta con diseño 3D incluido.</p>
 
           <div class="blog-post__cta">
-            <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20un%20stand%20para%20feria" target="_blank" rel="noopener" class="btn btn-whatsapp">Cotizar mi stand</a>
+            <a href={whatsappUrl("Hola, quiero cotizar un stand para feria")} target="_blank" rel="noopener" class="btn btn-whatsapp">Cotizar mi stand</a>
           </div>
         </div>
       </div>

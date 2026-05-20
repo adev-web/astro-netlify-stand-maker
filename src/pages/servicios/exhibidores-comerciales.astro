@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import WhatsAppButton from "../../components/WhatsAppButton.astro";
+import { whatsappUrl } from "../../constants";
 ---
 
 <BaseLayout
@@ -60,7 +61,7 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
         <section class="cta-section" aria-labelledby="cta">
           <h2 id="cta">¿Necesitas un exhibidor para tu tienda?</h2>
           <p>Te ayudamos a diseñar el display perfecto para tus productos. Cotiza hoy sin compromiso.</p>
-          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20un%20exhibidor%20comercial" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <a href={whatsappUrl("Hola, quiero cotizar un exhibidor comercial")} target="_blank" rel="noopener" class="btn btn-whatsapp">
             Cotizar exhibidor
           </a>
         </section>

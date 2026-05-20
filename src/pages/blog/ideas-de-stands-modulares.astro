@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import WhatsAppButton from "../../components/WhatsAppButton.astro";
+import { whatsappUrl } from "../../constants";
 ---
 
 <BaseLayout
@@ -62,7 +63,7 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
           <p>En <strong>ExpoStands Panamá</strong> diseñamos y fabricamos sistemas modulares a la medida de tu presupuesto. Trabajamos con perfiles de aluminio, paneles de PVC espumado y MDF, y ofrecemos diseños 3D antes de fabricar.</p>
 
           <div class="blog-post__cta">
-            <a href="https://wa.me/50767890123?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20stands%20modulares" target="_blank" rel="noopener" class="btn btn-whatsapp">Consultar por stands modulares</a>
+            <a href={whatsappUrl("Hola, quiero información sobre stands modulares")} target="_blank" rel="noopener" class="btn btn-whatsapp">Consultar por stands modulares</a>
           </div>
         </div>
       </div>
