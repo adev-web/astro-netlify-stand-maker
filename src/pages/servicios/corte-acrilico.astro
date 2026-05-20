@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<BaseLayout
+  title="Corte láser en acrílico en Panamá | ExpoStands Panamá"
+  description="Servicio profesional de corte y grabado láser en acrílico en Panamá. Fabricamos displays, letreros, expositores y piezas personalizadas con precisión milimétrica."
+  canonical="/servicios/corte-acrilico"
+  ogType="article"
+>
+  <Header />
+  <main id="main-content">
+    <article class="service-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Usted está aquí">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li aria-current="page">Corte láser en acrílico</li>
+          </ol>
+        </nav>
+
+        <h1>Corte láser en acrílico en Panamá</h1>
+
+        <p class="service-page__lead">
+          En ExpoStands Panamá ofrecemos servicios de corte y grabado láser en acrílico con tecnología de precisión. Trabajamos acrílico transparente, de colores, espejado y texturizado para proyectos comerciales, publicitarios y decorativos.
+        </p>
+
+        <section aria-labelledby="aplicaciones">
+          <h2 id="aplicaciones">Aplicaciones del acrílico cortado con láser</h2>
+          <ul>
+            <li><strong>Exhibidores para retail</strong> — Displays escalonados, soportes de productos, bases giratorias y expositores de mostrador.</li>
+            <li><strong>Letreros y letras corpóreas</strong> — Logos corporativos, nomenclaturas, letras iluminadas y señalización en acrílico.</li>
+            <li><strong>Separadores y barreras acrílicas</strong> — Mamparas de protección, divisores de escritorio y barreras para atención al cliente.</li>
+            <li><strong>Piezas decorativas</strong> — Figuras, trofeos, premios, llaveros, merchandising y artículos promocionales personalizados.</li>
+            <li><strong>Prototipos y maquetas</strong> — Fabricación de piezas para prototipado industrial, maquetas arquitectónicas y modelos funcionales.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="materiales">
+          <h2 id="materiales">Tipos de acrílico que trabajamos</h2>
+          <div class="grid-3">
+            <div class="card">
+              <h3>Acrílico transparente</h3>
+              <p>Ideal para displays donde se busca que el producto protagonicé. Alta transparencia óptica, disponible en 2 a 12 mm de grosor.</p>
+            </div>
+            <div class="card">
+              <h3>Acrílico de colores</h3>
+              <p>Amplia gama de colores sólidos y translúcidos. Perfecto para letreros institucionales, señalización infantil y mobiliario.</p>
+            </div>
+            <div class="card">
+              <h3>Acrílico espejado</h3>
+              <p>Acabado espejo en dorado, plateado y colores. Muy usado en letras corpóreas y displays de alta gama para cosmética y joyería.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section" aria-labelledby="cta">
+          <h2 id="cta">¿Necesitas piezas en acrílico cortadas con precisión?</h2>
+          <p>Envíanos tu diseño o dime tu idea y te cotizamos en el día.</p>
+          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20corte%20láser%20en%20acrílico" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            Cotizar por WhatsApp
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Corte láser en acrílico",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "ExpoStands Panamá"
+      },
+      "areaServed": { "@type": "Country", "name": "Panamá" },
+      "description": "Servicio de corte y grabado láser en acrílico para displays, letreros y piezas personalizadas en Panamá."
+    }
+  `} />
+</BaseLayout>
+
+<style is:global>
+  .service-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.5rem;
+    color: var(--color-text-light);
+  }
+
+  .breadcrumbs a {
+    color: var(--color-text-light);
+  }
+
+  .breadcrumbs [aria-current] {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .service-page h1 {
+    margin-bottom: 1rem;
+  }
+
+  .service-page__lead {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    max-width: 720px;
+    margin-bottom: 3rem;
+  }
+
+  .service-page h2 {
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-page ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .service-page li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .cta-section {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    margin: 0 0 0.75rem;
+  }
+
+  .cta-section p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  publishedTime?: string;
+  author?: string;
+  articleSection?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = "/images/og-default.svg",
+  ogType = "website",
+  publishedTime,
+  author,
+  articleSection,
+} = Astro.props;
+
+const site = "https://expostandspanama.com";
+const canonicalUrl = canonical ? `${site}${canonical}` : `${site}/`;
+const imageUrl = ogImage.startsWith("http") ? ogImage : `${site}${ogImage}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Astro" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content="ExpoStands Panamá" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {author && <meta property="article:author" content={author} />}
+    {articleSection && <meta property="article:section" content={articleSection} />}
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <script type="application/ld+json" set:html={`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ExpoStands Panamá",
+        "url": "${site}",
+        "logo": "${site}/images/logo-icon.svg",
+        "description": "Fabricación de stands, exhibidores, mobiliario comercial y corte láser en acrílico en Panamá.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Panamá",
+          "addressCountry": "PA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+507-6789-0123",
+          "contactType": "sales",
+          "availableLanguage": ["es"]
+        },
+        "sameAs": [
+          "https://instagram.com/expostandspanama"
+        ]
+      }
+    `} />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <slot />
+  </body>
+</html>

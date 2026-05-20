@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<BaseLayout
+  title="Letras corpóreas iluminadas en Panamá | ExpoStands Panamá"
+  description="Fabricamos letras corpóreas iluminadas y no iluminadas para fachadas, interiores y branding corporativo en Panamá. Acrílico, PVC, MDF y metal."
+  canonical="/servicios/letras-corporeas"
+  ogType="article"
+>
+  <Header />
+  <main id="main-content">
+    <article class="service-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Usted está aquí">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li aria-current="page">Letras corpóreas</li>
+          </ol>
+        </nav>
+
+        <h1>Fabricación de letras corpóreas en Panamá</h1>
+
+        <p class="service-page__lead">
+          En ExpoStands Panamá fabricamos letras corpóreas iluminadas y no iluminadas para fachadas comerciales, interiores de oficinas, restaurantes, tiendas y branding corporativo. Trabajamos en acrílico, PVC espumado, MDF, metal y combinaciones de materiales.
+        </p>
+
+        <section aria-labelledby="tipos">
+          <h2 id="tipos">Tipos de letras corpóreas</h2>
+          <div class="grid-3">
+            <div class="card">
+              <h3>Letras corpóreas iluminadas (LED)</h3>
+              <p>Acrílico con iluminación LED interna. Efecto flotante o de caja iluminada. Ideales para fachadas y rótulos nocturnos de alto impacto visual.</p>
+            </div>
+            <div class="card">
+              <h3>Letras corpóreas sin luz</h3>
+              <p>En PVC espumado, MDF o acrílico. Acabado mate, brillante o texturizado. Perfectas para interiores, logotipos de pared y recepciones.</p>
+            </div>
+            <div class="card">
+              <h3>Letras metálicas</h3>
+              <p>En aluminio, acero inoxidable o bronce. Acabado pulido, cepillado o pintado. Para proyectos corporativos de alta gama.</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="proceso">
+          <h2 id="proceso">Proceso de fabricación</h2>
+          <ol class="process-list">
+            <li><strong>Diseño y vectorización:</strong> Tomamos tu logo o tipografía y lo preparamos para corte.</li>
+            <li><strong>Corte:</strong> Corte láser o CNC según el material y grosor.</li>
+            <li><strong>Acabado:</strong> Lijado, pulido, pintura y ensamble de piezas.</li>
+            <li><strong>Iluminación:</strong> Instalación de tiras LED, transformadores y conexiones.</li>
+            <li><strong>Instalación:</strong> Colocación en fachada o interior con anclajes invisibles.</li>
+          </ol>
+        </section>
+
+        <section class="cta-section" aria-labelledby="cta">
+          <h2 id="cta">¿Quieres letras corpóreas para tu negocio?</h2>
+          <p>Cotiza tu rótulo o logotipo 3D hoy. Te enviamos una propuesta con diseño incluido.</p>
+          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20letras%20corp%C3%B3reas" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            Cotizar letras corpóreas
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fabricación de letras corpóreas",
+      "provider": { "@type": "LocalBusiness", "name": "ExpoStands Panamá" },
+      "areaServed": { "@type": "Country", "name": "Panamá" },
+      "description": "Fabricación de letras corpóreas iluminadas y no iluminadas para fachadas e interiores en Panamá."
+    }
+  `} />
+</BaseLayout>

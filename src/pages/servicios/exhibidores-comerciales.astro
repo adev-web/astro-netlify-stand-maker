@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<BaseLayout
+  title="Exhibidores comerciales en Panamá | ExpoStands Panamá"
+  description="Fabricamos exhibidores comerciales personalizados para retail, puntos de venta y merchandising en Panamá. Displays en acrílico, MDF y metal."
+  canonical="/servicios/exhibidores-comerciales"
+  ogType="article"
+>
+  <Header />
+  <main id="main-content">
+    <article class="service-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Usted está aquí">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li aria-current="page">Exhibidores comerciales</li>
+          </ol>
+        </nav>
+
+        <h1>Exhibidores comerciales personalizados en Panamá</h1>
+
+        <p class="service-page__lead">
+          En ExpoStands Panamá diseñamos y fabricamos exhibidores comerciales a medida para tiendas, retail, farmacias, supermercados y puntos de venta. Nuestros displays están pensados para maximizar la visibilidad de tus productos y mejorar la experiencia de compra.
+        </p>
+
+        <section aria-labelledby="tipos">
+          <h2 id="tipos">Tipos de exhibidores que fabricamos</h2>
+          <div class="grid-3">
+            <div class="card">
+              <h3>Exhibidores de mostrador</h3>
+              <p>Displays compactos en acrílico o MDF para colocar en cajas registradoras, mostradores de atención o mesas de exhibición. Ideales para productos pequeños como cosméticos, accesorios o electrónicos.</p>
+            </div>
+            <div class="card">
+              <h3>Exhibidores de piso</h3>
+              <p>Estructuras independientes para colocar en pasillos, entradas o zonas de alto tráfico. Fabricados en MDF, metal o acrílico con capacidad para múltiples productos.</p>
+            </div>
+            <div class="card">
+              <h3>Exhibidores de pared</h3>
+              <p>Paneles, repisas y módulos modulares para instalar en paredes. Aprovechan el espacio vertical de la tienda y permiten reorganizar la distribución fácilmente.</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="materiales">
+          <h2 id="materiales">Materiales para exhibidores</h2>
+          <ul>
+            <li><strong>Acrílico:</strong> Transparente, de colores o espejado. Ideal para displays elegantes donde el producto debe ser el protagonista.</li>
+            <li><strong>MDF lijado y lacado:</strong> Acabado premium para exhibidores de alta gama en tiendas de ropa, perfumería y tecnología.</li>
+            <li><strong>Metal y alambre:</strong> Para exhibidores resistentes de gran capacidad en supermercados y ferreterías.</li>
+            <li><strong>PVC espumado:</strong> Ligero y económico, ideal para exhibidores temporales o promocionales.</li>
+          </ul>
+        </section>
+
+        <section class="cta-section" aria-labelledby="cta">
+          <h2 id="cta">¿Necesitas un exhibidor para tu tienda?</h2>
+          <p>Te ayudamos a diseñar el display perfecto para tus productos. Cotiza hoy sin compromiso.</p>
+          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20un%20exhibidor%20comercial" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            Cotizar exhibidor
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Exhibidores comerciales",
+      "provider": { "@type": "LocalBusiness", "name": "ExpoStands Panamá" },
+      "areaServed": { "@type": "Country", "name": "Panamá" },
+      "description": "Fabricación de exhibidores comerciales personalizados para retail y puntos de venta en Panamá."
+    }
+  `} />
+</BaseLayout>

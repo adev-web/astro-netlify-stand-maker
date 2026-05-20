@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+---
+
+<BaseLayout
+  title="Fabricación de stands feriales en Panamá | ExpoStands Panamá"
+  description="Diseñamos y fabricamos stands modulares y personalizados para ferias, exposiciones y eventos corporativos en Panamá. Cotiza tu stand hoy."
+  canonical="/servicios/stands-feriales"
+  ogType="article"
+>
+  <Header />
+  <main id="main-content">
+    <article class="service-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Usted está aquí">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li aria-current="page">Stands feriales</li>
+          </ol>
+        </nav>
+
+        <h1>Fabricación de stands feriales en Panamá</h1>
+
+        <p class="service-page__lead">
+          En ExpoStands Panamá diseñamos y fabricamos stands para ferias, exposiciones y eventos corporativos. Trabajamos con sistemas modulares reutilizables y diseños personalizados, adaptándonos a tu presupuesto y espacio disponible.
+        </p>
+
+        <section aria-labelledby="tipos">
+          <h2 id="tipos">Tipos de stands que fabricamos</h2>
+          <div class="grid-3">
+            <div class="card">
+              <h3>Stand modular 3×3</h3>
+              <p>El formato clásico para ferias comerciales. Incluye paneles impresos, mostrador, iluminación LED y gráficos. Fácil de montar y reutilizable.</p>
+            </div>
+            <div class="card">
+              <h3>Stand personalizado</h3>
+              <p>Diseño único con estructura en aluminio, MDF o acrílico. Incluye mobiliario a medida, iluminación escénica, y acabados premium.</p>
+            </div>
+            <div class="card">
+              <h3>Stand pop-up</h3>
+              <p>Solución ligera y portátil para eventos rápidos. Se monta en minutos, ideal para marcas que participan en múltiples ferias al año.</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="incluye">
+          <h2 id="incluye">¿Qué incluye la fabricación de tu stand?</h2>
+          <ul>
+            <li><strong>Diseño 3D:</strong> Te presentamos un render realista antes de fabricar.</li>
+            <li><strong>Estructura:</strong> Aluminio, MDF, PVC espumado o acrílico según tu elección.</li>
+            <li><strong>Impresión gráfica:</strong> Vinil impreso de alta resolución con tu marca y diseño.</li>
+            <li><strong>Mobiliario:</strong> Mesas, mostradores, vitrinas y estanterías integradas.</li>
+            <li><strong>Iluminación:</strong> LED empotrado, tiras luminosas o focos direccionales.</li>
+            <li><strong>Montaje y desmontaje:</strong> Instalamos en el recinto ferial y desmontamos al finalizar.</li>
+          </ul>
+        </section>
+
+        <section class="cta-section" aria-labelledby="cta">
+          <h2 id="cta">¿Participas en una feria pronto?</h2>
+          <p>Cuéntanos el evento, el espacio disponible y tu presupuesto. Te enviamos una propuesta en 24 horas.</p>
+          <a href="https://wa.me/50767890123?text=Hola,%20quiero%20cotizar%20un%20stand%20para%20feria" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            Solicitar cotización
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fabricación de stands feriales",
+      "provider": { "@type": "LocalBusiness", "name": "ExpoStands Panamá" },
+      "areaServed": { "@type": "Country", "name": "Panamá" },
+      "description": "Diseño y fabricación de stands modulares y personalizados para ferias y exposiciones en Panamá."
+    }
+  `} />
+</BaseLayout>

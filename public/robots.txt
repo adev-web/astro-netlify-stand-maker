@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+Disallow: /404.html
+
+Sitemap: https://expostandspanama.com/sitemap.xml
+
+# Crawl-delay recommended for AI crawlers
+Crawl-Delay: 1
+
+# Optimize AI bot crawling
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

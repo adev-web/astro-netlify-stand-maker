@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Materials from "../components/Materials.astro";
+import FAQ from "../components/FAQ.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<BaseLayout
+  title="ExpoStands Panamá | Fabricación de stands, exhibidores y mobiliario comercial"
+  description="Fabricación profesional de stands feriales, exhibidores comerciales, corte láser en acrílico, letras corpóreas, señalización y mobiliario personalizado en Panamá. Cotiza sin compromiso."
+  canonical="/"
+  ogType="website"
+>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <Services />
+    <Projects />
+    <Materials />
+    <FAQ />
+  </main>
+  <Footer />
+  <WhatsAppButton />
+
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ExpoStands Panamá",
+      "alternateName": "ExpoStands",
+      "description": "Fabricación de stands feriales, exhibidores comerciales, corte láser en acrílico, letras corpóreas, señalización comercial y mobiliario personalizado en Panamá.",
+      "url": "https://expostandspanama.com",
+      "telephone": "+507-6789-0123",
+      "email": "info@expostandspanama.com",
+      "image": "https://expostandspanama.com/images/og-default.jpg",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Panamá",
+        "addressCountry": "PA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.9824,
+        "longitude": -79.5199
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/expostandspanama"
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de fabricación",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fabricación de stands feriales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corte láser en acrílico" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exhibidores comerciales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Letras corpóreas iluminadas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paneles MDF personalizados" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impresión de banners" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Señalización comercial" } }
+        ]
+      }
+    }
+  `} />
+</BaseLayout>

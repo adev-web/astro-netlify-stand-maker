@@ -1,0 +1,112 @@
+---
+const services = [
+  {
+    title: "Fabricación de stands",
+    description: "Stands modulares, personalizados y corporativos para ferias, exposiciones y eventos empresariales en Panamá. Diseñamos estructuras funcionales que atraen visitantes.",
+    href: "/servicios/stands-feriales",
+    icon: "🏗️",
+  },
+  {
+    title: "Corte láser en acrílico",
+    description: "Corte y grabado láser de precisión en acrílico. Fabricamos displays, letreros, expositores y piezas personalizadas con acabado profesional.",
+    href: "/servicios/corte-acrilico",
+    icon: "🔲",
+  },
+  {
+    title: "Exhibidores comerciales",
+    description: "Exhibidores para retail, puntos de venta y merchandising. Diseñamos displays que mejoran la visibilidad de tus productos en tiendas físicas.",
+    href: "/servicios/exhibidores-comerciales",
+    icon: "🛍️",
+  },
+  {
+    title: "Letras corpóreas",
+    description: "Letras corpóreas iluminadas y no iluminadas para fachadas, interiores comerciales y branding corporativo. Fabricadas en acrílico, PVC, MDF y metal.",
+    href: "/servicios/letras-corporeas",
+    icon: "✨",
+  },
+  {
+    title: "Paneles MDF personalizados",
+    description: "Paneles decorativos, separadores de ambiente y muebles en MDF con acabado de alta calidad. Cortamos y perforamos a medida según tu diseño.",
+    icon: "🪵",
+  },
+  {
+    title: "Impresión de banners",
+    description: "Impresión gráfica de gran formato en vinil, lona y materiales rígidos. Ideal para publicidad exterior, eventos, ferias y campañas promocionales.",
+    icon: "🖨️",
+  },
+  {
+    title: "Muebles para exhibición",
+    description: "Mobiliario comercial personalizado para ferias, pop-ups, showrooms y tiendas. Mesas, mostradores, vitrinas y estanterías a medida.",
+    icon: "🪑",
+  },
+  {
+    title: "Señalización comercial",
+    description: "Señalética corporativa, directorios, tótems, placas y letreros para oficinas, comercios y espacios públicos en Panamá.",
+    icon: "📍",
+  },
+];
+---
+
+<section class="section section-alt" id="servicios" aria-label="Servicios">
+  <div class="container">
+    <h2 class="section__title">Servicios de fabricación y exhibición</h2>
+    <p class="section__subtitle">
+      Ofrecemos soluciones completas en diseño, fabricación e instalación de stands, exhibidores y mobiliario comercial en Panamá.
+    </p>
+    <div class="grid-4">
+      {services.map((s) => (
+        <article class="card service-card">
+          <div class="service-card__icon" aria-hidden="true">{s.icon}</div>
+          <h3 class="service-card__title">
+            {s.href ? <a href={s.href}>{s.title}</a> : s.title}
+          </h3>
+          <p class="service-card__desc">{s.description}</p>
+          {s.href && (
+            <a href={s.href} class="service-card__link">
+              Saber más <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .service-card__icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .service-card__title {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  .service-card__title a {
+    color: var(--color-primary);
+  }
+
+  .service-card__title a:hover {
+    color: var(--color-accent);
+  }
+
+  .service-card__desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .service-card__link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary-light);
+  }
+</style>

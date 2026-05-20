@@ -1,0 +1,118 @@
+---
+const projects = [
+  {
+    title: "Stand modular 3×3 — Feria ExpoComercial 2025",
+    desc: "Stand modular desarmable con paneles de PVC espumado impresos, mostrador de melamina y letras corpóreas iluminadas. Montaje en 4 horas.",
+    tags: ["Stand ferial", "Modular", "Impresión"],
+  },
+  {
+    title: "Display acrílico para cosméticos — Boutique Las Tablas",
+    desc: "Exhibidor escalonado en acrílico transparente con base de MDF lacado blanco. Capacidad para 48 productos. Diseño minimalista.",
+    tags: ["Acrílico", "Exhibidor", "Retail"],
+  },
+  {
+    title: "Letras corpóreas iluminadas — Restaurante Panamá Viejo",
+    desc: "Letras corpóreas de 40 cm en acrílico con iluminación LED interna. Instalación en fachada de cristal. Efectito flotante.",
+    tags: ["Letras corpóreas", "LED", "Fachada"],
+  },
+  {
+    title: "Muebles comerciales pop-up — Mall Multiplaza",
+    desc: "Conjunto de 4 mesas modulares, 2 vitrinas de acrílico y mostrador curvo en MDF. Diseño transportable para campaña temporal.",
+    tags: ["Muebles", "Pop-up", "Retail"],
+  },
+];
+---
+
+<section class="section" id="proyectos" aria-label="Proyectos realizados">
+  <div class="container">
+    <h2 class="section__title">Proyectos recientes</h2>
+    <p class="section__subtitle">
+      Hemos trabajado con empresas de diversos sectores en Panamá. Estos son algunos de los proyectos que hemos fabricado e instalado.
+    </p>
+    <div class="grid-2">
+      {projects.map((p) => (
+        <article class="card project-card">
+          <div class="project-card__preview" aria-hidden="true">
+            <div class="project-card__placeholder"></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">{p.title}</h3>
+            <p class="project-card__desc">{p.desc}</p>
+            <div class="project-card__tags">
+              {p.tags.map((t) => (
+                <span class="project-card__tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .project-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card__preview {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .project-card__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    position: relative;
+  }
+
+  .project-card__placeholder::before {
+    content: "📐";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.3;
+  }
+
+  .project-card__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .project-card__title {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  .project-card__desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-card__tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-primary-light);
+    background: rgba(42, 90, 140, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+</style>

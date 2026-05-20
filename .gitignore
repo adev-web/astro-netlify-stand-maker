@@ -1,0 +1,5 @@
+node_modules/
+.astro/
+*.swp
+*.swn
+*.swm
