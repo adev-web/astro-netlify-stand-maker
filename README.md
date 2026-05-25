@@ -82,3 +82,20 @@ Crear una Firewall Rule en Cloudflare Dashboard → Security → WAF:
 El `docker-compose.yml` incluye un servicio `certbot` comentado para SSL con Let's Encrypt. Descomentarlo y configurar el dominio cuando sea necesario.
 
 Con Cloudflare proxy activado no hace falta — Cloudflare maneja el SSL en el edge y la conexión al origen puede ser HTTP.
+
+---
+
+## Roadmap
+
+- [x] Dockerfile multi-stage (Node build + Nginx serve)
+- [x] Nginx config (gzip, security headers, Cloudflare real-IP, cache)
+- [x] Docker Compose con volúmenes para uploads y SSL opcional
+- [x] Helper R2 para imágenes con fallback local
+- [x] README con docs
+- [ ] Despliegue en VPS
+- [ ] Dominio Hostinger + Cloudflare DNS
+- [ ] Nginx SSL (certbot o Cloudflare)
+- [ ] Subir imágenes de proyectos, materiales, hero
+- [ ] Agregar imágenes a componentes (Projects, Hero, Materials)
+- [ ] GitHub Actions CI/CD
+- [ ] Restricción por país (Cloudflare WAF) — solo Panamá
