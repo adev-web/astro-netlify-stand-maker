@@ -1,0 +1,42 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PUBLIC_WHATSAPP_NUMBER=${PUBLIC_WHATSAPP_NUMBER:-50767890123}
+        - PUBLIC_R2_PUBLIC_URL=${PUBLIC_R2_PUBLIC_URL:-}
+    container_name: expostands-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/uploads:/data/uploads:ro
+    # Descomenta para HTTPS con certbot:
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
+    #volumes:
+    #  - ./certbot/www:/var/www/certbot
+    #  - ./certbot/conf:/etc/letsencrypt
+    #networks:
+    #  - web
+
+  # Descomenta para SSL automático con Let's Encrypt:
+  #certbot:
+  #  image: certbot/certbot
+  #  container_name: expostands-certbot
+  #  volumes:
+  #    - ./certbot/www:/var/www/certbot
+  #    - ./certbot/conf:/etc/letsencrypt
+  #  entrypoint: >
+  #    sh -c "trap exit TERM; while :; do
+  #      certbot certonly --webroot -w /var/www/certbot
+  #        -d tudominio.com -d www.tudominio.com
+  #        --email tu-email@example.com --agree-tos --non-interactive
+  #        --keep-until-expiring;
+  #      sleep 12h & wait $!; done"
+
+#networks:
+#  web:
+#    external: true
