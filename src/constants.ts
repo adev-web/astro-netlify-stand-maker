@@ -1,3 +1,4 @@
+export const SITE_URL: string = import.meta.env.PUBLIC_SITE_URL ?? "https://expo-stands-panama.netlify.app";
 export const WHATSAPP_NUMBER: string = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? "50767890123";
 
 export const R2_PUBLIC_URL: string = import.meta.env.PUBLIC_R2_PUBLIC_URL ?? "";
