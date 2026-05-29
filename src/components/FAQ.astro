@@ -33,14 +33,14 @@ const faqs = [
     <p class="section__subtitle">
       Respuestas rápidas a las dudas más comunes sobre fabricación de stands, exhibidores y mobiliario comercial en Panamá.
     </p>
-    <div class="faq__list" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq__list">
       {faqs.map((faq) => (
-        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary class="faq__question" itemprop="name">
+        <details class="faq__item">
+          <summary class="faq__question">
             {faq.q}
           </summary>
-          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">{faq.a}</p>
+          <div class="faq__answer">
+            <p>{faq.a}</p>
           </div>
         </details>
       ))}
