@@ -1,0 +1,41 @@
+---
+const faqs = [
+  {
+    q: "¿Cuánto cuesta fabricar un stand en Panamá?",
+    a: "El costo de fabricar un stand ferial en Panamá depende del tamaño, los materiales y la complejidad del diseño. Un stand modular básico de 3x3 metros puede costar entre $800 y $2,500, mientras que proyectos personalizados con acabados premium pueden superar los $5,000. Te recomendamos solicitar una cotización gratuita para recibir un presupuesto ajustado a tu proyecto.",
+  },
+  {
+    q: "¿Qué material es mejor para exhibiciones comerciales?",
+    a: "Depende del uso. Para displays ligeros y modernos, el acrílico es ideal. Para stands feriales reutilizables, las estructuras modulares en aluminio son la mejor opción. El MDF funciona muy bien para muebles de exhibición con buen acabado, y el PVC espumado es perfecto para señalización e impresión gráfica. En ExpoStands Panamá te asesoramos sin compromiso.",
+  },
+  {
+    q: "¿Hacen estructuras personalizadas en Panamá?",
+    a: "Sí, diseñamos y fabricamos estructuras completamente personalizadas. Trabajamos con planos, renders y bocetos que nos envíes, o desarrollamos el diseño desde cero junto a tu equipo. No usamos catálogos fijos: cada proyecto se adapta a las necesidades del cliente.",
+  },
+  {
+    q: "¿Trabajan proyectos urgentes en Panamá?",
+    a: "Sí, hemos entregado proyectos en menos de 48 horas. Si necesitas un stand, exhibidor o letrero con carácter urgente, contáctanos por WhatsApp y evaluamos la viabilidad según los materiales y el diseño requerido.",
+  },
+  {
+    q: "¿Atienden empresas en toda Panamá?",
+    a: "Sí, trabajamos con empresas en Ciudad de Panamá, Arraiján, La Chorrera, Colón, David, Santiago y todo el interior del país. Coordinamos la entrega e instalación de tus proyectos donde los necesites.",
+  },
+  {
+    q: "¿Hacen mantenimiento o reparación de stands?",
+    a: "Sí, ofrecemos servicios de mantenimiento, reparación y actualización de stands y exhibidores existentes. Podemos renovar la imagen de tu stand o reparar estructuras dañadas para que luzcan como nuevas.",
+  },
+];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+})} />

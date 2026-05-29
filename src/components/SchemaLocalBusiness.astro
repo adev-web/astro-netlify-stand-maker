@@ -1,0 +1,40 @@
+---
+import { SITE_URL } from "../constants";
+
+export interface Props {
+  site?: string;
+  telephone?: string;
+}
+
+const {
+  site = SITE_URL,
+  telephone = "+507-6737-3828",
+} = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ExpoStands Panamá",
+  "description": "Fabricación profesional de stands feriales, exhibidores comerciales, corte láser en acrílico, letras corpóreas, señalización y mobiliario personalizado en Panamá",
+  "url": site,
+  "telephone": telephone,
+  "image": `${site}/images/og-default.svg`,
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Panamá, República de Panamá",
+    "addressLocality": "Panamá",
+    "addressCountry": "PA"
+  },
+  "areaServed": "PA",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": telephone,
+    "contactType": "sales",
+    "availableLanguage": ["es"]
+  },
+  "sameAs": [
+    "https://instagram.com/expostandspanama"
+  ]
+})} />
