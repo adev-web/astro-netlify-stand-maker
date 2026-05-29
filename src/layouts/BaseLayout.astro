@@ -22,9 +22,10 @@ const {
 } = Astro.props;
 
 import "../styles/global.css";
-import { WHATSAPP_NUMBER } from "../constants";
+import { WHATSAPP_NUMBER, SITE_URL } from "../constants";
+import SchemaLocalBusiness from "../components/SchemaLocalBusiness.astro";
 
-const site = "https://expostandspanama.com";
+const site = SITE_URL;
 const canonicalUrl = canonical ? `${site}${canonical}` : `${site}/`;
 const imageUrl = ogImage.startsWith("http") ? ogImage : `${site}${ogImage}`;
 
@@ -71,30 +72,8 @@ const telephoneNumber = `+${WHATSAPP_NUMBER.slice(0,3)}-${WHATSAPP_NUMBER.slice(
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <script type="application/ld+json" set:html={`
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ExpoStands Panamá",
-        "url": "${site}",
-        "logo": "${site}/images/logo-icon.svg",
-        "description": "Fabricación de stands, exhibidores, mobiliario comercial y corte láser en acrílico en Panamá.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Panamá",
-          "addressCountry": "PA"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "${telephoneNumber}",
-          "contactType": "sales",
-          "availableLanguage": ["es"]
-        },
-        "sameAs": [
-          "https://instagram.com/expostandspanama"
-        ]
-      }
-    `} />
+    <SchemaLocalBusiness site={site} telephone={telephoneNumber} />
+    <slot name="head" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
