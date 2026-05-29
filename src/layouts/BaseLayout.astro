@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 import "../styles/global.css";
-import { WHATSAPP_NUMBER, SITE_URL, GOOGLE_VERIFICATION } from "../constants";
+import { WHATSAPP_NUMBER, SITE_URL } from "../constants";
 import SchemaLocalBusiness from "../components/SchemaLocalBusiness.astro";
 
 const site = SITE_URL;
@@ -58,7 +58,7 @@ const telephoneNumber = `+${WHATSAPP_NUMBER.slice(0,3)}-${WHATSAPP_NUMBER.slice(
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
 
-    <meta name="google-site-verification" content={GOOGLE_VERIFICATION} />
+    <meta name="google-site-verification" content="8vGWNDHUwb6kOhVL8Xi1sEluAcVqLtuKnWQwVVd2kQc" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
